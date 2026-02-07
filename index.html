@@ -101,11 +101,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.03);
             display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
-        /* כרטיס אמצעי מודגש */
-        .price-card.featured {
-            border: 2px solid var(--gold); background: #fffbf0;
-            transform: scale(1.05); z-index: 2; box-shadow: 0 10px 30px var(--gold-glow);
-        }
         
         .price-card h3 { font-size: 2rem; margin: 0 0 10px; color: var(--brown); font-weight: 700; }
         .price-card .qty { font-size: 1.3rem; color: #8D6E63; margin-bottom: 20px; display: block; font-weight: 500; }
@@ -131,7 +126,6 @@
         @media (max-width: 768px) {
             .gallery-grid { grid-template-columns: repeat(3, 1fr); }
             .hero h1 { font-size: 3rem; }
-            .price-card.featured { transform: scale(1); }
             /* בנייד הסרגל צף למטה */
             .float-container { width: 100%; left: 0; bottom: 0; border-radius: 0; flex-direction: row; justify-content: center; gap: 10px; }
             .float-item { flex: 1; justify-content: center; margin: 0; }
@@ -229,8 +223,7 @@
                 <span class="qty">מארז 6 עוגיות</span>
                 <div class="final-price">₪60</div>
             </div>
-            <div class="price-card featured">
-                <div style="position:absolute; top:0; left:50%; transform: translate(-50%, -50%); background:var(--gold); color:var(--brown); padding:8px 20px; border-radius:20px; font-weight:bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">הכי משתלם</div>
+            <div class="price-card">
                 <h3>Classic Mix</h3>
                 <span class="qty">מארז 12 עוגיות</span>
                 <div class="final-price">₪110</div>
@@ -248,8 +241,7 @@
                 <span class="qty">6 כדורי בצק</span>
                 <div class="final-price">₪50</div>
             </div>
-            <div class="price-card featured">
-                <div style="position:absolute; top:0; left:50%; transform: translate(-50%, -50%); background:var(--gold); color:var(--brown); padding:8px 20px; border-radius:20px; font-weight:bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">הכי נמכר</div>
+            <div class="price-card">
                 <h3>Home Baker</h3>
                 <span class="qty">12 כדורי בצק</span>
                 <div class="final-price">₪90</div>
@@ -333,7 +325,6 @@
             }
         }
         
-        // פונקציית העתקה חכמה
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
                 var toast = document.getElementById("copy-toast");
